@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const requireDir = require("require-dir");
 const cors = require("cors");
 
@@ -7,12 +6,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://localhost:27017/nodeapi", {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-});
-requireDir("./models");
+require("./database");
 
-app.use("/api", require("./routes"));
+const routes = requireDir("./routes");
+Object.keys(routes).map((route) => app.use("/api", routes[route]));
 
 app.listen(process.env.PORT || 3333);
