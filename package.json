@@ -1,0 +1,21 @@
+{
+  "name": "curso-nodejs",
+  "version": "1.0.0",
+  "description": "Curso de nodejs realizado na Rocketseat Skylab",
+  "main": "src/server.js",
+  "author": "Elton Rodrigues",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "require-dir": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
